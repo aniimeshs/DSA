@@ -93,39 +93,25 @@ class Solution
         
         Node* ansHead = NULL;
         Node* ansTail = NULL;
-        while(first != NULL && second != NULL){
-            int sum = carry + first-> data + second-> data;
+        while(first != NULL || second != NULL || carry != 0){
+            int value1 = 0;;
+            if(first != NULL)
+                value1 = first -> data;
+                
+            int value2 = 0;;
+            if(second != NULL)
+                value2 = second -> data;
+            
+            int sum = carry + value1 + value2;
             int digit = sum % 10;
             
             insertAtTail(ansHead, ansTail, digit);
             carry = sum / 10;
-            first = first -> next;
-            second = second -> next;
-        }
-        
-        while(first != NULL){
-            int sum = carry + first-> data;
-            int digit = sum % 10;
             
-            insertAtTail(ansHead, ansTail, digit);
-            carry = sum / 10;
-            first = first -> next;
-        }
-        
-        while(second != NULL){
-            int sum = carry + second-> data;
-            int digit = sum % 10;
-            
-            insertAtTail(ansHead, ansTail, digit);
-            carry = sum / 10;
-            second = second -> next;
-        }
-        while(carry != NULL){
-            int sum = carry;
-            int digit = sum % 10;
-            
-            insertAtTail(ansHead, ansTail, digit);
-            carry = sum / 10;
+            if(first != NULL)
+                first = first -> next;
+            if(second != NULL)
+                second = second -> next;
         }
         return ansHead;
     }
