@@ -46,23 +46,37 @@ class Solution
             insertAtTail(cloneHead, cloneTail, temp-> data);
             temp = temp -> next;
         }
-        
-        //Step 2; Create a map
-        unordered_map<Node*, Node*> mapping;
-        
+        //Step 2: Add clone between original
         Node* originalNode = head;
         Node* cloneNode = cloneHead;
-        while(originalNode != NULL){
-            mapping[originalNode] = cloneNode;
-            originalNode = originalNode -> next;
-            cloneNode = cloneNode -> next;
+        while(originalNode != NULL && cloneNode != NULL){
+            Node* next = originalNode -> next;
+            originalNode -> next = cloneNode;
+            originalNode = next;
+            
+            next = cloneNode -> next;
+            cloneNode -> next = originalNode;
+            cloneNode = next;
         }
+        
+        //Step 3: Copy
+        temp = head;
+        while(temp != NULL){
+            if(temp -> next != NULL){
+                temp -> next -> arb = temp -> arb? temp -> arb -> next : temp -> arb;   
+            }
+            temp = temp -> next -> next;
+        }
+        //Revert Changes
         originalNode = head;
         cloneNode = cloneHead;
-        
-        while(originalNode != NULL){
-            cloneNode -> arb = mapping [originalNode -> arb];
+        while(originalNode != NULL && cloneNode != NULL){
+            originalNode -> next = cloneNode -> next;
             originalNode = originalNode -> next;
+            
+            if(originalNode != NULL){
+                cloneNode -> next = originalNode -> next;
+                }
             cloneNode = cloneNode -> next;
         }
         return cloneHead;
