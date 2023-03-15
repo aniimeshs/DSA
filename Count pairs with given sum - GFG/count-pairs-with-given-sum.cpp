@@ -8,14 +8,6 @@ using namespace std;
 //User function template for C++
 
 class Solution{   
-private:
-    int getCount(int *arr, int s, int e, int k){
-        int count = 0;
-        
-        while(s<e){
-            
-        }
-    }
 public:
     int getPairsCount(int arr[], int n, int k) {
         unordered_map<int, int> m;
