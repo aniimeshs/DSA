@@ -8,15 +8,21 @@ using namespace std;
 //User function template for C++
 
 class Solution{   
+private:
+    int getCount(int *arr, int s, int e, int k){
+        int count = 0;
+        
+        while(s<e){
+            
+        }
+    }
 public:
     int getPairsCount(int arr[], int n, int k) {
-        unordered_map<int, int>m;
+        unordered_map<int, int> m;
         int count = 0;
-        for(int i=0; i<n; i++){
-            int b = k-arr[i];
-            
-            if(m[b]){
-                count = count + m[b];
+        for (int i = 0; i < n; i++) {
+            if (m.find(k - arr[i]) != m.end()) {
+                count += m[k - arr[i]];
             }
             m[arr[i]]++;
         }
