@@ -28,11 +28,9 @@ int main() {
 // } Driver Code Ends
 
 
-// User function Template for C++
-
 // Function to reverse first k elements of a queue.
 queue<int> modifyQueue(queue<int> q, int k) {
-    // add code here.
+    //Step 1
     stack<int> s;
     for(int i=0; i<k; i++){
         int val = q.front();
@@ -40,13 +38,16 @@ queue<int> modifyQueue(queue<int> q, int k) {
         s.push(val);
     }
     
-    while(!s.empty()){
+    //Step 2
+    while
+    (!s.empty()){
         int val = s.top();
         s.pop();
         q.push(val);
     }
     
-    int t = q.size() - k;
+    //Step 3
+    int t = q.size()-k;
     while(t--){
         int val = q.front();
         q.pop();
