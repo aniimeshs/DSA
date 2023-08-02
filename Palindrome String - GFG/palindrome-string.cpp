@@ -8,8 +8,6 @@ using namespace std;
 //User function template for C++
 class Solution{
 public:	
-	
-	
 	int isPalindrome(string S)
 	{
 	    int j = S.length()-1;
