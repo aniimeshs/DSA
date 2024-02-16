@@ -1,5 +1,7 @@
 class Solution {
 public:
+    // Time complexity: O(n log n)
+    // Space complexity: O(n)
     int findLeastNumOfUniqueInts(vector<int>& arr, int k) {
         unordered_map<int, int>mp;
 
