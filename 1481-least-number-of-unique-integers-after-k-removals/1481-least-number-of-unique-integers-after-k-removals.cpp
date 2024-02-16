@@ -14,9 +14,14 @@ public:
             pairs.push_back(it);
         }
         
-        sort(begin(pairs),end(pairs),[](auto a,auto b){
-            return a.second<b.second;
-        });
+        //lambda function
+        auto cmp = [&](pair<int,int> a,pair<int,int> b){
+            return a.second < b.second;
+        };
+        sort(pairs.begin(),pairs.end(),cmp);
+        // sort(begin(pairs),end(pairs),[] (auto a, auto b){
+        //     return a.second < b.second;
+        // });
 
         int count = 0;
         for(auto it:pairs){
