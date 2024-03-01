@@ -12,6 +12,7 @@ public:
                 cnt2++;
             }
         }
+        //strins ans.append(cnt1-1,'1)
         string ans = string(cnt1-1, '1') + string(cnt2, '0') + '1';
         return ans;
     }
