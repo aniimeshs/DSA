@@ -4,11 +4,7 @@ public:
         return arr.end() - upper_bound(arr.begin(), arr.end(), val);
     }
     vector<int> resultArray(vector<int>& nums) {
-        vector<int> vec1, vec2, left, right;
-        left.push_back(nums[0]);
-        right.push_back(nums[1]);
-        vec1.push_back(nums[0]);
-        vec2.push_back(nums[1]);
+        vector<int>vec1(1,nums[0]), vec2(1,nums[1]), left(1,nums[0]), right(1,nums[1]);
 
         int i = 0, j = 0;
         for(int index=2; index < nums.size(); index++){
