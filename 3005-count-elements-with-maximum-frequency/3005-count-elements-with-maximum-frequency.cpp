@@ -3,22 +3,16 @@ public:
     int maxFrequencyElements(vector<int>& nums) {
         unordered_map<int, int>mp;
 
-        for(auto i: nums){
-            mp[i]++;
+        for(auto it: nums){
+            mp[it]++;
         }
-
-        int maxi = 0;
-        int freq = 0;
-        for(auto i = mp.begin(); i != mp.end(); i++){
-            if(i->second >= maxi){
-                maxi = i->second;
-            }
+        int maxi = 0, freq = 0;
+        
+        for(auto it = mp.begin(); it != mp.end(); it++){
+            if(it->second >= maxi) maxi = it->second;
         }
-
-        for(auto i = mp.begin(); i != mp.end(); i++){
-            if(i->second == maxi){
-                freq += i->second;
-            }
+        for(auto it = mp.begin(); it != mp.end(); it++){
+            if(it->second == maxi) freq += it->second;
         }
         return freq;
     }
