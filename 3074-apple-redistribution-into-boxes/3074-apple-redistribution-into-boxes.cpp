@@ -6,10 +6,10 @@ public:
         int sum = accumulate(apple.begin(), apple.end(), 0);
 
         int cnt = 0;
-        while(sum > 0){
+        while(sum > 0 && cnt <= capacity.size()){
             sum -= capacity[cnt++];
         }
-        
+
         return cnt;
     }
 };
