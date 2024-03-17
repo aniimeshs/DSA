@@ -1,19 +1,18 @@
 class Solution {
 public:
     int numSubarraysWithSum(vector<int>& nums, int goal) {
-        unordered_map<int, int> count;
-        count[0] = 1;
-        int curr_sum = 0;
-        int total_subarrays = 0;
-
+        int count = 0;
+        int sum = 0;
+        unordered_map<int, int> prefixSumCount; // Map to store the count of prefix sums
+        prefixSumCount[0] = 1; // Initialize with 0 sum encountered once
+    
         for (int num : nums) {
-            curr_sum += num;
-            if (count.find(curr_sum - goal) != count.end()) {
-                total_subarrays += count[curr_sum - goal];
-            }
-            count[curr_sum]++;
+            sum += num;
+// Check if there exists a prefix sum which when subtracted from current sum equals goal
+            count += prefixSumCount[sum - goal];
+// Increment the count of current prefix sum
+            prefixSumCount[sum]++;
         }
-
-        return total_subarrays;
+        return count;
     }
 };
