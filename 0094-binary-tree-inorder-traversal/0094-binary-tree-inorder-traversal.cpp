@@ -11,14 +11,31 @@
  */
 class Solution {
 public:
-    vector<int>answer;
+    // vector<int>answer;
     vector<int> inorderTraversal(TreeNode* root) {
-        if(root != NULL){
-            inorderTraversal(root -> left);
-            answer.push_back(root -> val);
-            inorderTraversal(root -> right);
-        }
+        // if(root != NULL){
+        //     inorderTraversal(root -> left);
+        //     answer.push_back(root -> val);
+        //     inorderTraversal(root -> right);
+        // }
 
-        return answer;
+        // return answer;
+        if(root == NULL) return {};
+        vector<int>vec;
+        stack<TreeNode*>st;
+
+        while(true){
+            if(root != NULL){
+                st.push(root);
+                root = root -> left;
+            }else{
+                if(st.empty()) break;
+                root = st.top();
+                st.pop();
+                vec.push_back(root -> val);
+                root = root -> right;
+            }
+        }
+        return vec;
     }
 };
