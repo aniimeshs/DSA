@@ -1,24 +1,24 @@
 class Solution {
 public:
     vector<int> relativeSortArray(vector<int>& arr1, vector<int>& arr2) {
-        map<int, int> m;
-		for(int i = 0; i < arr1.size(); i++){
-			m[arr1[i]]++;
-		}
-		vector<int> res;
+        map<int,int>mp;
+        vector<int>ans;
+        int y = 0;
+        for(int i=0; i<arr1.size(); i++) mp[arr1[i]]++;
 
-		for(int i = 0; i < arr2.size(); i++){
-			for(int j = 0; j < m[arr2[i]]; j++){
-				res.push_back(arr2[i]);
-			}
-			m.erase(arr2[i]);
-		}
+        while(y<arr2.size()){
+            if(mp[arr2[y]]){
+                ans.push_back(arr2[y]);
+                mp[arr2[y]]--;
+            }
+            else y++;
+        }
 
-		for(auto i : m){
-			for(int j = 0; j < m[i.first]; j++){
-				res.push_back(i.first);
-			}
-		}
-		return res;
-    }
+        for(auto it : mp){   
+            int freq=it.second;
+            for(int i=0; i<freq; i++)
+                ans.push_back(it.first);
+        }
+        return ans;
+    } 
 };
