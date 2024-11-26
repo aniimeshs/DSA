@@ -1,52 +1,14 @@
 class Solution {
-    
-private:
-    bool valid(char ch){
-        if(ch >= 'a' && ch<= 'z' || ch >= 'A' && ch<= 'Z' || ch >= '0' & ch<= '9'){
-            return 1;
-        }
-        return 0;
-    }
-    
-    char toLowercase(char ch){
-        if((ch >= 'a' && ch<= 'z') || (ch >= '0' & ch<= '9')){
-            return ch;
-        }
-        else{
-            char temp = ch - 'A' + 'a';
-            return temp;
-        }
-    }
-    bool checkPalindrome(string a) {
-        int s = 0;
-        int e = a.length()-1;
-
-        while(s<=e) {
-            if(a[s] != a[e])
-            {
-                return 0;       
-            }
-            else{
-                s++;
-                e--;
-            }
-        }
-        return 1;
-    }
 public:
     bool isPalindrome(string s) {
-        string temp = "";
-        
-        for(int j=0; j<s.length(); j++){
-            if(valid(s[j])){
-                temp.push_back(s[j]);
-            }
+        for (int i = 0, j = s.size() - 1; i < j; i++, j--) { // Move 2 pointers from each end until they collide
+            while (isalnum(s[i]) == false && i < j) 
+                i++; // Increment left pointer if not alphanumeric
+            while (isalnum(s[j]) == false && i < j) 
+                j--; // Decrement right pointer if no alphanumeric
+            if (toupper(s[i]) != toupper(s[j])) 
+                return false; // Exit and return error if not match
         }
-        
-        for(int j=0; j<temp.length(); j++){
-            temp[j] = toLowercase(temp[j]);
-        }
-        
-        return checkPalindrome(temp);
+    return true;
     }
 };
