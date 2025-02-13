@@ -1,18 +1,19 @@
 class Solution {
 public:
     int minOperations(vector<int>& nums, int k) {
-        priority_queue<long long, vector<long long>, greater<long long>> pq;
-        for (auto n : nums)
-            pq.push(n);
-        int cnt = 0;
-        while (pq.size() && pq.top() < k) {
-            long minNum = pq.top();
-            pq.pop();
-            long nextMinNum = pq.top();
-            pq.pop();
-            pq.push(2 * minNum + nextMinNum);
-            cnt++;
+        priority_queue<long long, vector<long long>, greater<long long>>
+        pq (nums.begin(), nums.end()); 
+        int operations = 0;
+
+        while (pq.size() > 1 && pq.top() < k) {
+            long long x = pq.top(); pq.pop();
+            long long y = pq.top(); pq.pop();
+
+            long long newElement = min(x, y) * 2LL + max(x, y);
+            pq.push(newElement);
+            operations++;
         }
-        return cnt;
+
+        return operations;
     }
 };
