@@ -10,18 +10,14 @@
 
 class Solution {
 public:
-    TreeNode* dfs(TreeNode* curr,int val){
-		if(!curr) return NULL;        
-		if(curr->val == val) return curr;
-		TreeNode* l = dfs(curr->left,val);
-		if(l) return l ;
-		TreeNode* r = dfs(curr->right,val);
-		if(r) return r;
-		return NULL;
-	}
+    TreeNode* ans;
+    TreeNode* getTargetCopy(TreeNode* original, TreeNode* cloned, TreeNode* target) {
+        if(cloned == NULL) return cloned;
+        if(cloned -> val == target -> val) ans = cloned;
 
-	TreeNode* getTargetCopy(TreeNode* original, TreeNode* cloned, TreeNode* target) {
-		int val = target->val;
-		return dfs(cloned,val);
-	}
+        getTargetCopy(original, cloned -> left, target);
+        getTargetCopy(original, cloned -> right, target);
+
+        return ans;
+    }
 };
