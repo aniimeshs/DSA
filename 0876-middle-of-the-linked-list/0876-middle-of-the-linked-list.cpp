@@ -9,12 +9,14 @@
  * };
  */
 class Solution {
+private: 
+    ListNode* getMiddle(ListNode* slow, ListNode* fast) {
+        if(fast == NULL || fast -> next == NULL) return slow;
+
+        return getMiddle(slow -> next, fast -> next -> next);
+    }
 public:
     ListNode* middleNode(ListNode* head) {
-        ListNode *slow = head;
-        ListNode *fast = head;
-        while (fast && fast->next)
-            slow = slow->next, fast = fast->next->next;
-        return slow;
+        return getMiddle(head, head);
     }
 };
