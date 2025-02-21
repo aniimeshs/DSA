@@ -8,25 +8,20 @@
  */
 class Solution {
 public:
+    unordered_map<ListNode*, int> cycle;
+    ListNode* cyclePoint(ListNode* head) {
+        if (!head) return NULL;
+
+        cycle[head]++;
+        if (cycle[head] > 1) return head;
+        return cyclePoint(head->next);
+    }
     ListNode *detectCycle(ListNode *head) {
-        ListNode* slow = head;  
-        ListNode* fast = head;  
+        // if(!head || head->val == 100500)return head;
 
-        // Phase 1: Detect the loop
-        while (fast != NULL && fast->next != NULL) {
-            slow = slow->next;        
-            fast = fast->next->next;  
-
-            if (slow == fast) {
-                slow = head; 
-                // Phase 2: Find the first node of the loop
-                while (slow != fast) {
-                    slow = slow->next;  
-                    fast = fast->next;  
-                }
-                return slow;  
-            }
-        }
-        return NULL; 
+        // head->val = 100500;
+        // return detectCycle(head->next);
+        if (!head) return nullptr;
+        return cyclePoint(head);
     }
 };
