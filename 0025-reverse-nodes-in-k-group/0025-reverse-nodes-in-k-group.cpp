@@ -21,8 +21,6 @@ public:
         }
 
         if (count < k) return head; // If less than k nodes, return as is
-
-        // Reverse k nodes
         ListNode* prev = nullptr;
         ListNode* curr = head;
         ListNode* next = nullptr;
@@ -33,10 +31,7 @@ public:
             prev = curr;
             curr = next;
         }
-
-        // Recursively process the next part of the list
         head->next = reverseKGroup(curr, k);
-
-        return prev; // New head of the reversed list
+        return prev; 
     }
 };
