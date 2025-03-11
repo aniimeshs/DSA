@@ -1,25 +1,12 @@
 class Solution {
 public:
     bool canJump(vector<int>& nums) {
-        int size = nums.size();
+        int goal = nums.size() - 1;
 
-        //Initial Cases
-        if(size==1)
-            return true;
-        if(nums[0]==0)
-            return false;
-
-        int max_pos = 0;
-        for(int i=0;i<size-1;i++){
-            if(i>max_pos)
-                return false;
-                
-            if(nums[i]+i>max_pos)
-                max_pos = nums[i]+i;
-
-            if(max_pos>=size-1)
-                return true;
+        for(int i = nums.size() - 2; i >= 0; i--) {
+            if(i + nums[i] >= goal) goal = i;
         }
-        return false;
+
+        return goal == 0;
     }
 };
