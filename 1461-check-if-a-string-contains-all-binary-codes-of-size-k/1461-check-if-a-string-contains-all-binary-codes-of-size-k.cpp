@@ -1,23 +1,12 @@
 class Solution {
 public:
     bool hasAllCodes(string s, int k) {
-        int required = pow(2, k);
         unordered_set<string> st;
 
-        int i = 0, j = 0;
-        string temp = "";
-
-        while(j < s.length()) {
-            temp += s[j];
-
-            if(j - i + 1 == k) {
-                st.insert(temp);
-                temp.erase(0, 1);
-                i++;
-            }
-            j++;
+        for (int i = 0; i + k <= s.size(); i++) {
+            st.insert(s.substr(i, k));
         }
 
-        return st.size() == required;
+        return st.size() == (int)pow(2, k);
     }
 };
