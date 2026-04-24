@@ -2,7 +2,7 @@ class Solution {
 public:
     bool hasAllCodes(string s, int k) {
         int required = pow(2, k);
-        set<string> st;
+        unordered_set<string> st;
 
         int i = 0, j = 0;
         string temp = "";
