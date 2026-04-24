@@ -6,9 +6,11 @@ public:
         vector<int> ans;
 
         for(int j = 0; j < nums.size(); j++) {
+            // Maintaining Window Size
             if(!dq.empty() && dq.front() == j - k) 
                 dq.pop_front();
 
+            // Removing all small elements
             while(!dq.empty() && nums[dq.back()] < nums[j]) 
                 dq.pop_back();
 
