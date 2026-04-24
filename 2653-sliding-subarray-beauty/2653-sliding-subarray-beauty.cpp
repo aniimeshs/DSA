@@ -1,35 +1,33 @@
 class Solution {
 public:
     vector<int> getSubarrayBeauty(vector<int>& nums, int k, int x) {
-        map<int, int> mp;
-        vector<int> result;
-        int i = 0, j = 0;
+        vector<int> freq(101, 0);  
+        vector<int> ans;
 
-        while(j < nums.size()) {
-            mp[nums[j]]++;
+        int i = 0;
 
-            if(j - i + 1 == k) {
-                int count = 0, beauty = 0;
+        for (int j = 0; j < nums.size(); j++) {
+            freq[nums[j] + 50]++;
 
-                for(auto &it : mp) {
-                    if(it.first >= 0) break;
-                    count += it.second;
+            if (j - i + 1 == k) {
+                int count = 0;
+                int beauty = 0;  
 
-                    if(count >= x) {
-                        beauty = it.first;
+                for (int idx = 0; idx < 50; idx++) {
+                    count += freq[idx];
+                    if (count >= x) {
+                        beauty = idx - 50;  
                         break;
                     }
                 }
 
-                result.push_back(beauty);
-                mp[nums[i]]--;
-                if (mp[nums[i]] == 0) {
-                    mp.erase(nums[i]);
-                }
+                ans.push_back(beauty);
+
+                freq[nums[i] + 50]--;
                 i++;
             }
-            j++;
         }
-        return result;
+
+        return ans;
     }
 };
