@@ -12,6 +12,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1423-maximum-points-you-can-obtain-from-cards](https://github.com/Aniimesh69/DSA/tree/main/1423-maximum-points-you-can-obtain-from-cards/) | Medium |
 | [2461-maximum-sum-of-distinct-subarrays-with-length-k](https://github.com/Aniimesh69/DSA/tree/main/2461-maximum-sum-of-distinct-subarrays-with-length-k/) | Medium |
 | [2653-sliding-subarray-beauty](https://github.com/Aniimesh69/DSA/tree/main/2653-sliding-subarray-beauty/) | Medium |
+| [3255-find-the-power-of-k-size-subarrays-ii](https://github.com/Aniimesh69/DSA/tree/main/3255-find-the-power-of-k-size-subarrays-ii/) | Medium |
 ## Sliding Window
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -24,6 +25,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1876-substrings-of-size-three-with-distinct-characters](https://github.com/Aniimesh69/DSA/tree/main/1876-substrings-of-size-three-with-distinct-characters/) | Easy |
 | [2461-maximum-sum-of-distinct-subarrays-with-length-k](https://github.com/Aniimesh69/DSA/tree/main/2461-maximum-sum-of-distinct-subarrays-with-length-k/) | Medium |
 | [2653-sliding-subarray-beauty](https://github.com/Aniimesh69/DSA/tree/main/2653-sliding-subarray-beauty/) | Medium |
+| [3255-find-the-power-of-k-size-subarrays-ii](https://github.com/Aniimesh69/DSA/tree/main/3255-find-the-power-of-k-size-subarrays-ii/) | Medium |
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
