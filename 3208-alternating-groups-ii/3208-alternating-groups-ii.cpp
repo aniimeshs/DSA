@@ -2,19 +2,21 @@ class Solution {
 public:
     int numberOfAlternatingGroups(vector<int>& colors, int k) {
         int n = colors.size();
+        int streak = 1;
         int count = 0;
-        int left = 0;
-        
-        for (int right = 0; right < n + k - 1; ++right) {
-            if (right > 0 && colors[right % n] == colors[(right - 1) % n]) {
-                left = right;  
+
+        for(int j = 1; j < n + k - 1; j++) {
+            if(colors[j % n]!= colors[(j - 1) % n]) {
+                streak++;
+            } else {
+                streak = 1;
             }
-            
-            if (right - left + 1 >= k) {
-                count++;  
+
+            if(streak >= k) {
+                count++;
             }
         }
-        
+
         return count;
     }
 };
