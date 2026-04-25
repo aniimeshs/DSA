@@ -14,6 +14,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [2653-sliding-subarray-beauty](https://github.com/Aniimesh69/DSA/tree/main/2653-sliding-subarray-beauty/) | Medium |
 | [3208-alternating-groups-ii](https://github.com/Aniimesh69/DSA/tree/main/3208-alternating-groups-ii/) | Medium |
 | [3255-find-the-power-of-k-size-subarrays-ii](https://github.com/Aniimesh69/DSA/tree/main/3255-find-the-power-of-k-size-subarrays-ii/) | Medium |
+| [3679-minimum-discards-to-balance-inventory](https://github.com/Aniimesh69/DSA/tree/main/3679-minimum-discards-to-balance-inventory/) | Medium |
 ## Sliding Window
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -28,6 +29,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [2653-sliding-subarray-beauty](https://github.com/Aniimesh69/DSA/tree/main/2653-sliding-subarray-beauty/) | Medium |
 | [3208-alternating-groups-ii](https://github.com/Aniimesh69/DSA/tree/main/3208-alternating-groups-ii/) | Medium |
 | [3255-find-the-power-of-k-size-subarrays-ii](https://github.com/Aniimesh69/DSA/tree/main/3255-find-the-power-of-k-size-subarrays-ii/) | Medium |
+| [3679-minimum-discards-to-balance-inventory](https://github.com/Aniimesh69/DSA/tree/main/3679-minimum-discards-to-balance-inventory/) | Medium |
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -37,6 +39,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [1876-substrings-of-size-three-with-distinct-characters](https://github.com/Aniimesh69/DSA/tree/main/1876-substrings-of-size-three-with-distinct-characters/) | Easy |
 | [2461-maximum-sum-of-distinct-subarrays-with-length-k](https://github.com/Aniimesh69/DSA/tree/main/2461-maximum-sum-of-distinct-subarrays-with-length-k/) | Medium |
 | [2653-sliding-subarray-beauty](https://github.com/Aniimesh69/DSA/tree/main/2653-sliding-subarray-beauty/) | Medium |
+| [3679-minimum-discards-to-balance-inventory](https://github.com/Aniimesh69/DSA/tree/main/3679-minimum-discards-to-balance-inventory/) | Medium |
 ## Prefix Sum
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -80,4 +83,9 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1876-substrings-of-size-three-with-distinct-characters](https://github.com/Aniimesh69/DSA/tree/main/1876-substrings-of-size-three-with-distinct-characters/) | Easy |
+| [3679-minimum-discards-to-balance-inventory](https://github.com/Aniimesh69/DSA/tree/main/3679-minimum-discards-to-balance-inventory/) | Medium |
+## Simulation
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3679-minimum-discards-to-balance-inventory](https://github.com/Aniimesh69/DSA/tree/main/3679-minimum-discards-to-balance-inventory/) | Medium |
 <!---LeetCode Topics End-->
